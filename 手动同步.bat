@@ -10,13 +10,5 @@ git add .
 git push origin master
 @echo 已经完成,
 
-SET daoTime=60
-:dao
-set /a daoTime=daoTime-1
-ping -n 2 -w 500 127.1>nul
-cls
-echo 上传Git完成 ,倒计时退出: %daoTime%秒
-if %daoTime%==0 (exit) else (goto dao)
-
 
 
