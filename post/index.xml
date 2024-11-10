@@ -55,9 +55,6 @@
 &lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;了解如何建立模板：新建文档，填补内容，然后导出成为模板&lt;/li&gt;
 &lt;li&gt;并解决了多端同步的问题&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;　　‍&lt;/p&gt;
-&lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;http://www.9991024.com/Markdown/readme.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;markdown 语法的重新回顾&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; latex 数学语法的使用（非必要）&lt;/li&gt;
