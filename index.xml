@@ -14,17 +14,17 @@
         
         <guid>https://monoshy.github.io/p/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</guid>
         <description>&lt;h1 id=&#34;思源笔记的使用记录&#34;&gt;思源笔记的使用记录
-&lt;/h1&gt;&lt;h1 id=&#34;2024-10-18&#34;&gt;2024-10-18
-&lt;/h1&gt;&lt;ul&gt;
+&lt;/h1&gt;&lt;h2 id=&#34;2024-10-18&#34;&gt;2024-10-18
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;学会修改主题&lt;/li&gt;
 &lt;li&gt;之后转向Latex排版制作笔记，因为需要进行分享。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;2024-10-10&#34;&gt;2024-10-10
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;2024-10-10&#34;&gt;2024-10-10
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;学会使用双向链接&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;2024-10-01&#34;&gt;2024-10-01
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;2024-10-01&#34;&gt;2024-10-01
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;解决发布微信公众号的问题，&lt;/p&gt;
 &lt;ul&gt;
@@ -37,8 +37,8 @@
     &gt;尝试用思源笔记直接发布公众号 - 链滴 (ld246.com)&lt;/a&gt; 进行思源笔记的布置， 但是粘贴到公众号时发现 二级标题的格式不正确， 且 LATEX 公式不显示&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;2024-09-29&#34;&gt;2024-09-29
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;2024-09-29&#34;&gt;2024-09-29
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;注册七牛云账号， 完成电脑版云端部署&lt;/p&gt;
 &lt;/li&gt;
@@ -51,8 +51,8 @@
 &lt;p&gt;所以在一开始， 没有开启慧根的情况下， 建议直接使用订阅， 可以同时节省图床以及同步的问题&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;2024-09-23&#34;&gt;2024-09-23
-&lt;/h1&gt;&lt;ul&gt;
+&lt;h2 id=&#34;2024-09-23&#34;&gt;2024-09-23
+&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;了解如何建立模板：新建文档，填补内容，然后导出成为模板&lt;/li&gt;
 &lt;li&gt;并解决了多端同步的问题&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;http://www.9991024.com/Markdown/readme.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -64,10 +64,10 @@
         </item>
         <item>
         <title>归档</title>
-        <link>https://monoshy.github.io/%E5%BD%92%E6%A1%A3/</link>
+        <link>https://monoshy.github.io/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>https://monoshy.github.io/%E5%BD%92%E6%A1%A3/</guid>
+        <guid>https://monoshy.github.io/archives/</guid>
         <description></description>
         </item>
         <item>
@@ -81,10 +81,10 @@
         </item>
         <item>
         <title>搜索</title>
-        <link>https://monoshy.github.io/%E6%90%9C%E7%B4%A2/</link>
+        <link>https://monoshy.github.io/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>https://monoshy.github.io/%E6%90%9C%E7%B4%A2/</guid>
+        <guid>https://monoshy.github.io/search/</guid>
         <description></description>
         </item>
         <item>
@@ -108,7 +108,7 @@
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
 &lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;友情链接&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;

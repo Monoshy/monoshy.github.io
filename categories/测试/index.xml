@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Test on Monoshy的学习小站</title>
-        <link>https://monoshy.github.io/categories/test/</link>
-        <description>Recent content in Test on Monoshy的学习小站</description>
+        <title>测试 on Monoshy的学习小站</title>
+        <link>https://monoshy.github.io/categories/%E6%B5%8B%E8%AF%95/</link>
+        <description>Recent content in 测试 on Monoshy的学习小站</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Monoshy</copyright>
-        <lastBuildDate>Sun, 10 Nov 2024 18:59:01 +0800</lastBuildDate><atom:link href="https://monoshy.github.io/categories/test/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Nov 2024 18:59:01 +0800</lastBuildDate><atom:link href="https://monoshy.github.io/categories/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>测试博客</title>
         <link>https://monoshy.github.io/p/%E6%B5%8B%E8%AF%95%E5%8D%9A%E5%AE%A2/</link>
         <pubDate>Sun, 10 Nov 2024 18:59:01 +0800</pubDate>
