@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Posts on Monoshy的学习小站</title>
-        <link>https://monoshy.github.io/post/</link>
-        <description>Recent content in Posts on Monoshy的学习小站</description>
+        <title>小技巧 on Monoshy的学习小站</title>
+        <link>https://monoshy.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+        <description>Recent content in 小技巧 on Monoshy的学习小站</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Monoshy</copyright>
-        <lastBuildDate>Sun, 10 Nov 2024 18:59:01 +0800</lastBuildDate><atom:link href="https://monoshy.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 10 Nov 2024 18:59:01 +0800</lastBuildDate><atom:link href="https://monoshy.github.io/categories/%E5%B0%8F%E6%8A%80%E5%B7%A7/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>如何快速给PDF添加书签</title>
         <link>https://monoshy.github.io/p/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E7%BB%99pdf%E6%B7%BB%E5%8A%A0%E4%B9%A6%E7%AD%BE/</link>
         <pubDate>Sun, 10 Nov 2024 18:59:01 +0800</pubDate>
