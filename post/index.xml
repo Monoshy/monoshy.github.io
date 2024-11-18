@@ -58,7 +58,21 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;搜索不到书籍&#34;&gt;搜索不到书籍
 &lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;搜索不到书籍就比较麻烦了，可以OCR识别目录的文字，然后再相应的位置使用简单的数字或符号创立书签，再进入书签编辑软件利用文字替换。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;搜索不到书籍就比较麻烦了，可以OCR识别目录的文字，然后再相应的位置使用简单的数字或符号创立书签，再进入书签编辑软件利用文字替换。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ocr软件推荐：https://github.com/hiroi-sora/Umi-OCR/releases&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;选择单栏-按自然段换行识别&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在书签编辑软件中，利用替换和正则表达式进行修正&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 正则表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;编辑书签&#34;&gt;编辑书签
 &lt;/h1&gt;&lt;p&gt;　　使用书签编辑软件PdgCntEditor，将复制得到的内容粘贴进软件之中，调整好层级和页码，保存即可。&lt;/p&gt;
