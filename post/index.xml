@@ -7,7 +7,77 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>Monoshy</copyright>
-        <lastBuildDate>Wed, 20 Nov 2024 17:47:21 +0800</lastBuildDate><atom:link href="https://monoshy.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 24 Nov 2024 11:46:28 +0800</lastBuildDate><atom:link href="https://monoshy.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Learning</title>
+        <link>https://monoshy.github.io/p/learning/</link>
+        <pubDate>Sun, 24 Nov 2024 11:46:28 +0800</pubDate>
+        
+        <guid>https://monoshy.github.io/p/learning/</guid>
+        <description>&lt;h1 id=&#34;现在正在学习的内容&#34;&gt;现在正在学习的内容
+&lt;/h1&gt;&lt;h2 id=&#34;宏观经济学&#34;&gt;宏观经济学
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 宏观经济学【合集已完结】|南开博士带你学&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 2.宏观经济数据第二章(上)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 2.宏观经济数据第二章(下)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 3.国民收入第三章(上)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 3.国民收入第三章(下)&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 4.货币系统第四章（上）&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 4.货币系统第四章（下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 5.通胀第五章上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 5.通胀第五章下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 6.第六章开放经济上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 6.第六章开放经济下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 7.第七章失业&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 8.第八章经济增长上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 8.第八章经济增长下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 9.第九章经济增长II上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 9.第九章经济增长II下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 10.第十章经济波动导论&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 11.第11章总需求I上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 11.第11章总需求I下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 12.第12章总需求II上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 12.第十二章总需求II下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 13.第十三章开放经济MF模型上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 13.第十三章开放经济MF模型下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 14.第十四章总供给、通胀与失业&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 14.模型之母&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 15.第十五章动态模型上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 15.第十五章动态模型下&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 16.第16章稳定化政策&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 17.第十七章政府债务与赤字&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 18.第十八章金融危机&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 19.第十九章 消费微观基础&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 20.第二十章 投资微观基础&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cs50x&#34;&gt;CS50X
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/0/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 0&lt;/a&gt; Scratch&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/1/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 1&lt;/a&gt; C&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/2/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 2&lt;/a&gt; Arrays&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/3/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 3&lt;/a&gt; Algorithms&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/4/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 4&lt;/a&gt; Memory&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/5/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 5&lt;/a&gt; Data Structures&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 6&lt;/a&gt; Python&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/7/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 7&lt;/a&gt; SQL&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/8/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 8&lt;/a&gt; HTML, CSS, JavaScript&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/9/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 9&lt;/a&gt; Flask&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a class=&#34;link&#34; href=&#34;https://cs50.harvard.edu/college/2024/fall/weeks/10/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Week 10&lt;/a&gt; The End&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;已经学习完的内容归档&#34;&gt;已经学习完的内容归档
+&lt;/h1&gt;</description>
+        </item>
+        <item>
         <title>我想读的书</title>
         <link>https://monoshy.github.io/p/%E6%88%91%E6%83%B3%E8%AF%BB%E7%9A%84%E4%B9%A6/</link>
         <pubDate>Wed, 20 Nov 2024 17:47:21 +0800</pubDate>
