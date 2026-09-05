@@ -943,7 +943,7 @@ function phaseOf(days){
 }
 function tick(){
   const exam = parseDate(state.examDate);
-  exam.setHours(8,30,0,0);
+  exam.setHours(0,0,0,0);
   let diff = exam.getTime() - Date.now();
   if(diff < 0) diff = 0;
   const days = Math.floor(diff / 86400000);
