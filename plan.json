@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-05T08:28:48.759Z",
+  "exportedAt": "2026-09-05T10:52:39.134Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -22,7 +22,7 @@
       "content": "线代基础04 逆矩阵与初等矩阵",
       "date": "2026-09-05",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1788591155573
     },
