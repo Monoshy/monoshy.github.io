@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-05T10:52:39.134Z",
+  "exportedAt": "2026-09-05T11:20:38.361Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -65,6 +65,16 @@
       "done": false,
       "preset": false,
       "createdAt": 1788591181304
+    },
+    {
+      "id": "t1788607204669zvph",
+      "subject": "micro",
+      "content": "微观 完全竞争市场",
+      "date": "2026-09-05",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788607204669
     }
   ]
 }
