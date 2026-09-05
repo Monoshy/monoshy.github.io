@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-05T08:19:56.182Z",
+  "exportedAt": "2026-09-05T08:28:48.759Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -12,7 +12,7 @@
       "content": "线代基础03 矩阵的基本运算",
       "date": "2026-09-05",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1788591148153
     },
