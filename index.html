@@ -268,9 +268,10 @@ a{color:inherit}
 .task-day.overdue-group .d-date{color:var(--muted)}
 .task-list{display:flex;flex-direction:column;gap:8px}
 .task-item{
-  display:flex;align-items:center;gap:14px;
-  padding:11px 14px;border:1px solid var(--line);border-radius:10px;
+  display:flex;align-items:center;gap:12px;
+  padding:11px 14px 11px 12px;border:1px solid var(--line);border-radius:10px;
   background:#fff;transition:box-shadow .15s,opacity .2s;
+  border-left:4px solid var(--sc);
 }
 .task-item:hover{box-shadow:0 2px 10px rgba(34,49,43,.08)}
 .task-item.done{opacity:.55}
@@ -283,7 +284,11 @@ a{color:inherit}
 .task-check svg{opacity:0;transition:opacity .15s}
 .task-item.done .task-check{background:var(--sc);border-color:var(--sc)}
 .task-item.done .task-check svg{opacity:1}
-.task-subject-dot{width:10px;height:10px;border-radius:50%;background:var(--sc);flex:none}
+.task-subject-name{font-size:12px;font-weight:700;flex:none;letter-spacing:.02em}
+.task-tag{
+  flex:none;font-size:11px;line-height:1;padding:4px 7px;border-radius:5px;font-weight:600;
+}
+.task-tag.deferred{background:#FBE9E7;color:#C2482E;border:1px solid #F2CFC7}
 .task-content{flex:1;font-size:14px;min-width:0;word-break:break-word}
 .task-duration{font-size:12px;color:var(--muted);flex:none;font-variant-numeric:tabular-nums}
 .task-actions{display:flex;gap:2px;flex:none}
@@ -452,7 +457,7 @@ a{color:inherit}
 
     <div class="hero-meta">
       <span class="kv">初试日期 <strong id="metaDate">--</strong></span>
-      <span class="kv">首科开考 <strong>08:30</strong></span>
+      <span class="kv">截止时刻 <strong>00:00</strong></span>
       <span class="kv">当前阶段 <span class="phase-pill" id="phasePill">--</span></span>
       <button class="link-btn" id="editDateBtn">修改考试日期</button>
     </div>
@@ -483,6 +488,7 @@ a{color:inherit}
   <!-- ===== 学习计划 ===== -->
   <section class="tasks-section" id="tasks">
     <h2 class="section-title"><span class="bar"></span>学习计划<span class="sub">任务按日期正序排列（9月5日 → 考试前），可直接编辑、筛选与打卡</span>
+      <button class="btn btn-accent btn-sm" id="rolloverBtn" title="把昨天未完成的任务一键顺延到今天，并打上「昨日未完成」标签">延期昨日任务</button>
       <button class="btn btn-ghost btn-sm" id="presetBtn" style="margin-left:auto">加载预设备考计划</button>
       <button class="btn btn-danger btn-sm" id="clearTasksBtn">清空当前计划</button>
     </h2>
@@ -1126,8 +1132,9 @@ function renderTasks(){
       html += '<button class="task-check" data-toggle="' + t.id + '" aria-label="切换完成状态">';
       html += '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.8 9 10 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       html += '</button>';
-      html += '<span class="task-subject-dot"></span>';
+      html += '<span class="task-subject-name" style="color:' + s.color + '">' + (s.name || '未知') + '</span>';
       html += '<span class="task-content">' + escapeHtml(t.content) + '</span>';
+      if(t.deferred) html += '<span class="task-tag deferred">昨日未完成</span>';
       html += '<span class="task-duration">' + fmtDuration(t.duration || 0) + '</span>';
       html += '<span class="task-actions">';
       html += '<button class="task-btn" data-edit="' + t.id + '" aria-label="编辑任务">';
@@ -1367,6 +1374,25 @@ document.getElementById('saveDateBtn').addEventListener('click', function(){
   tick();
   renderAll();
 });
+
+/* ===== 一键延期：昨日未完成任务 → 今天 ===== */
+function rolloverYesterday(){
+  const y = addDays(todayStr(), -1);
+  const roll = state.tasks.filter(t => t.date === y && !t.done);
+  if(!roll.length){
+    alert('昨天（' + y + '）没有未完成的任务，无需延期。');
+    return;
+  }
+  if(!confirm('将昨天未完成的 ' + roll.length + ' 条任务顺延到今天，并打上「昨日未完成」标签，是否继续？')) return;
+  roll.forEach(t => {
+    t.date = todayStr();
+    t.deferred = true;
+  });
+  saveState();
+  renderAll();
+  alert('已延期 ' + roll.length + ' 条任务到今天，并标记「昨日未完成」。可在任务列表中查看，勾选完成或按需编辑。');
+}
+document.getElementById('rolloverBtn').addEventListener('click', rolloverYesterday);
 
 /* ===== 交互：加载预设备考计划 ===== */
 document.getElementById('presetBtn').addEventListener('click', function(){
