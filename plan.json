@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-06T06:06:23.953Z",
+  "exportedAt": "2026-09-06T06:23:10.458Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -75,6 +75,116 @@
       "done": false,
       "preset": false,
       "createdAt": 1788607204669
+    },
+    {
+      "id": "t1788675656039etxz",
+      "subject": "math3",
+      "content": "线代基础09 特征值性质与相似矩阵",
+      "date": "2026-09-07",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675656039
+    },
+    {
+      "id": "t1788675673554vlfh",
+      "subject": "math3",
+      "content": "线代基础10 相似对角化与对称矩阵",
+      "date": "2026-09-07",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675673554
+    },
+    {
+      "id": "t1788675686207he2g",
+      "subject": "math3",
+      "content": "线代基础11 合同对角化与二次型",
+      "date": "2026-09-07",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675686207
+    },
+    {
+      "id": "t17886756922773kye",
+      "subject": "math3",
+      "content": "线代基础12 二次型的配方法与正定性",
+      "date": "2026-09-07",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675692277
+    },
+    {
+      "id": "t1788675732477ygox",
+      "subject": "math3",
+      "content": "概率基础01 事件关系与概率公式",
+      "date": "2026-09-08",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675732477
+    },
+    {
+      "id": "t1788675741228o55m",
+      "subject": "math3",
+      "content": "概率基础02 独立性与一维离散型随机变量",
+      "date": "2026-09-08",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675741228
+    },
+    {
+      "id": "t1788675747779uego",
+      "subject": "math3",
+      "content": "概率基础03 一维连续型随机变量",
+      "date": "2026-09-08",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675747779
+    },
+    {
+      "id": "t178867575420971dk",
+      "subject": "math3",
+      "content": "概率基础04 二维随机变量及其分布",
+      "date": "2026-09-08",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675754209
+    },
+    {
+      "id": "t17886757603841nzv",
+      "subject": "math3",
+      "content": "概率基础05 随机变量函数的分布",
+      "date": "2026-09-09",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675760384
+    },
+    {
+      "id": "t1788675766544xoz2",
+      "subject": "math3",
+      "content": "概率基础06 随机变量的数字特征",
+      "date": "2026-09-09",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675766544
+    },
+    {
+      "id": "t1788675771048adpm",
+      "subject": "math3",
+      "content": "概率基础07 大数定律与统计初步",
+      "date": "2026-09-09",
+      "duration": 90,
+      "done": false,
+      "preset": false,
+      "createdAt": 1788675771048
     }
   ]
 }
