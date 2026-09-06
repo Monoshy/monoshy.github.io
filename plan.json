@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-06T07:22:21.192Z",
+  "exportedAt": "2026-09-06T12:13:03.630Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -42,7 +42,7 @@
       "content": "线代基础06 线性方程组解的判定与通解",
       "date": "2026-09-06",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1788591168875
     },
