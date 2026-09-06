@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-06T06:23:10.458Z",
+  "exportedAt": "2026-09-06T07:22:21.192Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -32,7 +32,7 @@
       "content": "线代基础05 初等变换的应用与矩阵的秩",
       "date": "2026-09-06",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1788591163084
     },
