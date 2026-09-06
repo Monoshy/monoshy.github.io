@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-06T12:13:03.630Z",
+  "exportedAt": "2026-09-06T15:23:09.248Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -185,6 +185,16 @@
       "done": false,
       "preset": false,
       "createdAt": 1788675771048
+    },
+    {
+      "id": "t1788708166902bsby",
+      "subject": "politics",
+      "content": "马原 09实践10认识",
+      "date": "2026-09-06",
+      "duration": 90,
+      "done": true,
+      "preset": false,
+      "createdAt": 1788708166902
     }
   ]
 }
