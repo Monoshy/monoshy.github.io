@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-07T11:43:24.777Z",
+  "exportedAt": "2026-09-07T15:50:20.211Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -68,7 +68,7 @@
       "content": "线代基础08 特征值与特征向量",
       "date": "2026-09-07",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1788591181304,
       "deferred": true,
