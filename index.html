@@ -339,6 +339,7 @@ a{color:inherit}
 
 /* 理论 / 实践比例卡 */
 .kind-bar{display:flex;height:12px;border-radius:99px;overflow:hidden;background:var(--paper-deep);margin-bottom:10px}
+.kind-bar.sm{height:7px;margin-bottom:12px}
 .kb-theory{background:#7A8B99;transition:width .4s ease}
 .kb-practice{background:#C2482E;transition:width .4s ease}
 .kind-legend{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-soft)}
@@ -346,7 +347,13 @@ a{color:inherit}
 .kdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
 .kdot.td{background:#7A8B99}
 .kdot.pd{background:#C2482E}
-.kind-pending{font-size:12px;color:var(--muted);margin-top:10px;padding-top:9px;border-top:1px dashed var(--line)}
+.kind-subject-title{font-size:12px;color:var(--muted);margin:14px 0 9px;padding-top:10px;border-top:1px dashed var(--line)}
+.kind-subject{margin-bottom:10px}
+.kind-subject:last-child{margin-bottom:0}
+.ks-top{display:flex;justify-content:space-between;align-items:baseline;font-size:12.5px;margin-bottom:5px;color:var(--ink-soft)}
+.ks-top b{font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;font-size:12px}
+.ks-name{font-weight:700;letter-spacing:.02em}
+.kind-pending{font-size:12px;color:var(--muted);margin-top:12px;padding-top:9px;border-top:1px dashed var(--line)}
 .kind-tip{
   margin-top:8px;font-size:12.5px;line-height:1.6;color:#7A5B1F;
   background:var(--gold-soft);border-radius:8px;padding:8px 10px;
@@ -1233,20 +1240,37 @@ function renderStats(){
   renderKindStats();
 }
 
-/* ===== 渲染：理论 / 实践比例 ===== */
+/* ===== 渲染：理论 / 实践比例（按科目分开） ===== */
 function renderKindStats(){
   const wrap = document.getElementById('kindStats');
   if(!wrap) return;
   const all = state.tasks;
   const pending = all.filter(t => !t.done);
-  const count = function(list, kind){ return list.filter(t => kindOf(t) === kind).length; };
-  const allT = count(all, 'theory'), allP = count(all, 'practice');
-  const penT = count(pending, 'theory'), penP = count(pending, 'practice');
-  const total = allT + allP;
+  const total = all.length;
+  const allT = all.filter(t => kindOf(t) === 'theory').length;
+  const allP = total - allT;
   const pct = function(n){ return total ? Math.round(n / total * 100) : 0; };
   const tPct = pct(allT), pPct = pct(allP);
 
+  /* 按科目明细 */
+  let detail = '';
+  SUBJECT_KEYS.forEach(k => {
+    const s = SUBJECTS[k];
+    const tasks = all.filter(t => t.subject === k);
+    if(!tasks.length) return;
+    const tN = tasks.filter(t => kindOf(t) === 'theory').length;
+    const pN = tasks.length - tN;
+    const kt = Math.round(tN / tasks.length * 100);
+    const kp = 100 - kt;
+    detail += '<div class="kind-subject">';
+    detail += '<div class="ks-top"><span class="ks-name" style="color:' + s.color + '">' + s.name + '</span><b>' + tN + ' 理论 · ' + pN + ' 实践</b></div>';
+    detail += '<div class="kind-bar sm"><span class="kb-theory" style="width:' + (kt || 0) + '%"></span><span class="kb-practice" style="width:' + (kp || 0) + '%"></span></div>';
+    detail += '</div>';
+  });
+
   let tip;
+  const penT = pending.filter(t => kindOf(t) === 'theory').length;
+  const penP = pending.length - penT;
   const penTotal = penT + penP;
   const penPct = penTotal ? Math.round(penP / penTotal * 100) : 0;
   if(penTotal === 0) tip = '当前没有待完成的任务，先添加或加载计划吧。';
@@ -1255,14 +1279,15 @@ function renderKindStats(){
   else tip = '待完成中实践占 ' + penPct + '%，刷题充足，注意同步巩固理论。';
 
   let html = '';
-  html += '<div class="kind-bar">';
-  html += '<span class="kb-theory" style="width:' + (tPct || 0) + '%"></span>';
-  html += '<span class="kb-practice" style="width:' + (pPct || 0) + '%"></span>';
-  html += '</div>';
+  html += '<div class="kind-bar"><span class="kb-theory" style="width:' + (tPct || 0) + '%"></span><span class="kb-practice" style="width:' + (pPct || 0) + '%"></span></div>';
   html += '<div class="kind-legend">';
   html += '<span><i class="kdot td"></i>理论 · 听课 <b>' + allT + '</b> 条 · ' + tPct + '%</span>';
   html += '<span><i class="kdot pd"></i>实践 · 做题 <b>' + allP + '</b> 条 · ' + pPct + '%</span>';
   html += '</div>';
+  if(detail){
+    html += '<div class="kind-subject-title">按科目</div>';
+    html += detail;
+  }
   html += '<div class="kind-pending">待完成：理论 ' + penT + ' 条 · 实践 ' + penP + ' 条</div>';
   html += '<div class="kind-tip">' + tip + '</div>';
   wrap.innerHTML = html;
