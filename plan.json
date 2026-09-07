@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-06T15:23:09.248Z",
+  "exportedAt": "2026-09-07T05:13:54.863Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -50,31 +50,34 @@
       "id": "t1788591174921r1ow",
       "subject": "math3",
       "content": "线代基础07 向量组的线性相关性",
-      "date": "2026-09-06",
+      "date": "2026-09-07",
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788591174921
+      "createdAt": 1788591174921,
+      "deferred": true
     },
     {
       "id": "t17885911813047v7m",
       "subject": "math3",
       "content": "线代基础08 特征值与特征向量",
-      "date": "2026-09-06",
+      "date": "2026-09-07",
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788591181304
+      "createdAt": 1788591181304,
+      "deferred": true
     },
     {
       "id": "t1788607204669zvph",
       "subject": "micro",
       "content": "微观 完全竞争市场",
-      "date": "2026-09-06",
+      "date": "2026-09-07",
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788607204669
+      "createdAt": 1788607204669,
+      "deferred": true
     },
     {
       "id": "t1788675656039etxz",
