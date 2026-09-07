@@ -200,12 +200,13 @@ a{color:inherit}
 /* ===== 任务计划 ===== */
 .tasks-section{margin-bottom:52px}
 .task-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:20px}
-.task-form{display:grid;grid-template-columns:1fr 1fr 2fr 110px auto;gap:12px;align-items:end}
+.task-form{display:grid;grid-template-columns:1fr 1fr 1.6fr 120px;gap:12px;align-items:end}
 .task-form .field{display:flex;flex-direction:column;gap:5px}
 .task-form .field label{font-size:12px;color:var(--muted)}
 .task-form select,.task-form input{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:#fff;width:100%}
 .task-form .field.date-field input{padding:7px 10px}
-.task-form .btn{height:37px}
+.task-form .field.content-field{grid-column:1 / 4}
+.task-form .btn{grid-column:4;height:37px}
 @media (max-width:760px){
   .task-form{grid-template-columns:1fr 1fr}
   .task-form .field.content-field{grid-column:1 / -1}
@@ -528,13 +529,13 @@ a{color:inherit}
           <label for="taskDate">日期</label>
           <input type="date" id="taskDate">
         </div>
-        <div class="field content-field">
-          <label for="taskContent">任务内容</label>
-          <input type="text" id="taskContent" placeholder="例如：高数第三章 定积分专项练习" maxlength="80">
-        </div>
         <div class="field">
           <label for="taskDuration">预计时长（分钟）</label>
           <input type="number" id="taskDuration" min="5" max="600" step="5" value="90">
+        </div>
+        <div class="field content-field">
+          <label for="taskContent">任务内容</label>
+          <input type="text" id="taskContent" placeholder="例如：高数第三章 定积分专项练习" maxlength="80">
         </div>
         <button type="submit" class="btn btn-primary">添加任务</button>
       </form>
