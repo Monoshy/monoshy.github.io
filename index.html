@@ -286,7 +286,7 @@ a{color:inherit}
 .task-item.done .task-check{background:var(--sc);border-color:var(--sc)}
 .task-item.done .task-check svg{opacity:1}
 .task-subject-name{font-size:12px;font-weight:700;flex:none;letter-spacing:.02em}
-.task-kind{flex:none;font-size:11px;line-height:1;padding:4px 7px;border-radius:5px;font-weight:600;letter-spacing:.02em}
+.task-kind{flex:none;font-size:11px;line-height:1;padding:4px 7px;border-radius:5px;font-weight:600;letter-spacing:.02em;margin-right:5px}
 .task-kind.theory{background:#E9EEF2;color:#5B6B7A;border:1px solid #D3DCE3}
 .task-kind.practice{background:#FBE9E7;color:#C2482E;border:1px solid #F2CFC7}
 .task-tag{
@@ -344,6 +344,7 @@ a{color:inherit}
 .kb-practice{background:#C2482E;transition:width .4s ease}
 .kind-legend{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-soft)}
 .kind-legend b{color:var(--ink);font-variant-numeric:tabular-nums}
+.kind-both-note{font-size:11px;color:var(--muted)}
 .kdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
 .kdot.td{background:#7A8B99}
 .kdot.pd{background:#C2482E}
@@ -530,6 +531,7 @@ a{color:inherit}
           <select id="taskKind">
             <option value="theory">理论 · 听课</option>
             <option value="practice" selected>实践 · 做题</option>
+            <option value="both">理论 + 实践</option>
           </select>
         </div>
         <div class="field date-field">
@@ -626,6 +628,7 @@ a{color:inherit}
           <select id="editKind">
             <option value="theory">理论 · 听课</option>
             <option value="practice">实践 · 做题</option>
+            <option value="both">理论 + 实践</option>
           </select>
         </div>
         <div class="field">
@@ -1178,7 +1181,7 @@ function renderTasks(){
       html += '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.8 9 10 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       html += '</button>';
       html += '<span class="task-subject-name" style="color:' + s.color + '">' + (s.name || '未知') + '</span>';
-      html += '<span class="task-kind ' + (kindOf(t) === 'theory' ? 'theory' : 'practice') + '">' + (kindOf(t) === 'theory' ? '理论' : '实践') + '</span>';
+      html += kindTags(kindOf(t));
       html += '<span class="task-content">' + escapeHtml(t.content) + '</span>';
       if(t.deferred) html += '<span class="task-tag deferred">昨日未完成</span>';
       html += '<span class="task-duration">' + fmtDuration(t.duration || 0) + '</span>';
@@ -1240,49 +1243,55 @@ function renderStats(){
   renderKindStats();
 }
 
-/* ===== 渲染：理论 / 实践比例（按科目分开） ===== */
+/* ===== 渲染：理论 / 实践比例（按科目分开；both 双计） ===== */
 function renderKindStats(){
   const wrap = document.getElementById('kindStats');
   if(!wrap) return;
   const all = state.tasks;
   const pending = all.filter(t => !t.done);
-  const total = all.length;
-  const allT = all.filter(t => kindOf(t) === 'theory').length;
-  const allP = total - allT;
-  const pct = function(n){ return total ? Math.round(n / total * 100) : 0; };
-  const tPct = pct(allT), pPct = pct(allP);
+  const N = all.length;
+  const cnt = function(list, kind){ return list.filter(t => { const k = kindOf(t); return k === kind || k === 'both'; }).length; };
+  const allT = cnt(all, 'theory'), allP = cnt(all, 'practice');
+  const penT = cnt(pending, 'theory'), penP = cnt(pending, 'practice');
+  const pctT = N ? Math.round(allT / N * 100) : 0;
+  const pctP = N ? Math.round(allP / N * 100) : 0;
+  /* 相对占比：both 双计后按 理论:实践 归一化，保证比例条不超宽 */
+  const rel = function(tn, pn){
+    const s = tn + pn;
+    if(!s) return { t: 0, p: 0 };
+    const t = Math.round(tn / s * 100);
+    return { t: t, p: 100 - t };
+  };
+  const ov = rel(allT, allP);
 
-  /* 按科目明细 */
   let detail = '';
   SUBJECT_KEYS.forEach(k => {
     const s = SUBJECTS[k];
     const tasks = all.filter(t => t.subject === k);
     if(!tasks.length) return;
-    const tN = tasks.filter(t => kindOf(t) === 'theory').length;
-    const pN = tasks.length - tN;
-    const kt = Math.round(tN / tasks.length * 100);
-    const kp = 100 - kt;
+    const tN = cnt(tasks, 'theory'), pN = cnt(tasks, 'practice');
+    const r = rel(tN, pN);
     detail += '<div class="kind-subject">';
     detail += '<div class="ks-top"><span class="ks-name" style="color:' + s.color + '">' + s.name + '</span><b>' + tN + ' 理论 · ' + pN + ' 实践</b></div>';
-    detail += '<div class="kind-bar sm"><span class="kb-theory" style="width:' + (kt || 0) + '%"></span><span class="kb-practice" style="width:' + (kp || 0) + '%"></span></div>';
+    detail += '<div class="kind-bar sm"><span class="kb-theory" style="width:' + (r.t || 0) + '%"></span><span class="kb-practice" style="width:' + (r.p || 0) + '%"></span></div>';
     detail += '</div>';
   });
 
   let tip;
-  const penT = pending.filter(t => kindOf(t) === 'theory').length;
-  const penP = pending.length - penT;
   const penTotal = penT + penP;
-  const penPct = penTotal ? Math.round(penP / penTotal * 100) : 0;
+  const penRel = rel(penT, penP);
+  const penPct = penRel.p;
   if(penTotal === 0) tip = '当前没有待完成的任务，先添加或加载计划吧。';
   else if(penPct < 40) tip = '待完成中实践（做题）仅占 ' + penPct + '%，刷题偏少，记得多做题！';
   else if(penPct < 60) tip = '待完成中实践占 ' + penPct + '%，听课与刷题搭配均衡，保持。';
   else tip = '待完成中实践占 ' + penPct + '%，刷题充足，注意同步巩固理论。';
 
   let html = '';
-  html += '<div class="kind-bar"><span class="kb-theory" style="width:' + (tPct || 0) + '%"></span><span class="kb-practice" style="width:' + (pPct || 0) + '%"></span></div>';
+  html += '<div class="kind-bar"><span class="kb-theory" style="width:' + (ov.t || 0) + '%"></span><span class="kb-practice" style="width:' + (ov.p || 0) + '%"></span></div>';
   html += '<div class="kind-legend">';
-  html += '<span><i class="kdot td"></i>理论 · 听课 <b>' + allT + '</b> 条 · ' + tPct + '%</span>';
-  html += '<span><i class="kdot pd"></i>实践 · 做题 <b>' + allP + '</b> 条 · ' + pPct + '%</span>';
+  html += '<span><i class="kdot td"></i>理论 · 听课 <b>' + allT + '</b> 条 · ' + pctT + '%</span>';
+  html += '<span><i class="kdot pd"></i>实践 · 做题 <b>' + allP + '</b> 条 · ' + pctP + '%</span>';
+  html += '<span class="kind-both-note">「理论+实践」任务同时计入两侧</span>';
   html += '</div>';
   if(detail){
     html += '<div class="kind-subject-title">按科目</div>';
@@ -1346,22 +1355,31 @@ function renderAll(){
 /* ===== 交互：表单 ===== */
 const KIND_OPTIONS = [
   { v: 'theory', label: '理论 · 听课' },
-  { v: 'practice', label: '实践 · 做题' }
+  { v: 'practice', label: '实践 · 做题' },
+  { v: 'both', label: '理论 + 实践' }
 ];
 function fillKindOptions(sel, selected){
   sel.innerHTML = KIND_OPTIONS.map(k =>
     '<option value="' + k.v + '"' + (k.v === selected ? ' selected' : '') + '>' + k.label + '</option>'
   ).join('');
 }
-/* 任务类型推断：优先按内容关键词归类；无命中时默认实践（做题） */
+/* 任务类型推断：同时命中听课与做题关键词 → both；无命中时默认实践（做题） */
+const KIND_THEORY_RE = /听课|精讲|课程|背诵|默写|精读|复习|总结|整理|框架|模板|手册|通读|回归|摘录|笔记|归纳/;
+const KIND_PRACTICE_RE = /真题|模拟|限时|专项|练习|训练|做题|套卷|精练|速练|重做|批改|测试|错题|刷题/;
 function inferKind(content){
   const c = String(content || '');
-  if(/真题|模拟|限时|专项|练习|训练|做题|套卷|精练|速练|重做|批改|测试|错题|刷题/.test(c)) return 'practice';
-  if(/听课|精讲|课程|背诵|默写|精读|复习|总结|整理|框架|模板|手册|通读|回归|摘录|笔记|归纳/.test(c)) return 'theory';
+  const isT = KIND_THEORY_RE.test(c);
+  const isP = KIND_PRACTICE_RE.test(c);
+  if(isT && isP) return 'both';
+  if(isT) return 'theory';
   return 'practice';
 }
 function kindOf(t){
   return (t && t.kind) ? t.kind : inferKind(t && t.content);
+}
+function kindTags(k){
+  if(k === 'both') return '<span class="task-kind theory">理论</span><span class="task-kind practice">实践</span>';
+  return '<span class="task-kind ' + (k === 'theory' ? 'theory' : 'practice') + '">' + (k === 'theory' ? '理论' : '实践') + '</span>';
 }
 function fillSubjectOptions(sel, selected){
   sel.innerHTML = SUBJECT_KEYS.map(k =>
