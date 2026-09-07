@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-07T15:52:31.828Z",
+  "exportedAt": "2026-09-07T16:03:54.278Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -216,12 +216,12 @@
       "done": true,
       "preset": false,
       "createdAt": 1788708166902,
-      "kind": "theory"
+      "kind": "both"
     },
     {
       "id": "t17887963436293zv6",
       "subject": "politics",
-      "kind": "theory",
+      "kind": "both",
       "content": "12 历史观基本问题、社会基本矛盾",
       "date": "2026-09-07",
       "duration": 90,
