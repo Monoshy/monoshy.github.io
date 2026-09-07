@@ -285,6 +285,9 @@ a{color:inherit}
 .task-item.done .task-check{background:var(--sc);border-color:var(--sc)}
 .task-item.done .task-check svg{opacity:1}
 .task-subject-name{font-size:12px;font-weight:700;flex:none;letter-spacing:.02em}
+.task-kind{flex:none;font-size:11px;line-height:1;padding:4px 7px;border-radius:5px;font-weight:600;letter-spacing:.02em}
+.task-kind.theory{background:#E9EEF2;color:#5B6B7A;border:1px solid #D3DCE3}
+.task-kind.practice{background:#FBE9E7;color:#C2482E;border:1px solid #F2CFC7}
 .task-tag{
   flex:none;font-size:11px;line-height:1;padding:4px 7px;border-radius:5px;font-weight:600;
 }
@@ -1167,6 +1170,7 @@ function renderTasks(){
       html += '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.8 9 10 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       html += '</button>';
       html += '<span class="task-subject-name" style="color:' + s.color + '">' + (s.name || '未知') + '</span>';
+      html += '<span class="task-kind ' + (kindOf(t) === 'theory' ? 'theory' : 'practice') + '">' + (kindOf(t) === 'theory' ? '理论' : '实践') + '</span>';
       html += '<span class="task-content">' + escapeHtml(t.content) + '</span>';
       if(t.deferred) html += '<span class="task-tag deferred">昨日未完成</span>';
       html += '<span class="task-duration">' + fmtDuration(t.duration || 0) + '</span>';
