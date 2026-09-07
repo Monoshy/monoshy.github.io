@@ -332,6 +332,21 @@ a{color:inherit}
 .week-bar{width:60%;max-width:34px;border-radius:5px 5px 2px 2px;background:var(--ink);min-height:3px;transition:height .4s ease}
 .week-bar.hot{background:var(--accent)}
 .week-day{font-size:11px;color:var(--muted)}
+
+/* 理论 / 实践比例卡 */
+.kind-bar{display:flex;height:12px;border-radius:99px;overflow:hidden;background:var(--paper-deep);margin-bottom:10px}
+.kb-theory{background:#7A8B99;transition:width .4s ease}
+.kb-practice{background:#C2482E;transition:width .4s ease}
+.kind-legend{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-soft)}
+.kind-legend b{color:var(--ink);font-variant-numeric:tabular-nums}
+.kdot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:1px}
+.kdot.td{background:#7A8B99}
+.kdot.pd{background:#C2482E}
+.kind-pending{font-size:12px;color:var(--muted);margin-top:10px;padding-top:9px;border-top:1px dashed var(--line)}
+.kind-tip{
+  margin-top:8px;font-size:12.5px;line-height:1.6;color:#7A5B1F;
+  background:var(--gold-soft);border-radius:8px;padding:8px 10px;
+}
 .subject-bars{display:flex;flex-direction:column;gap:12px}
 .sbar{display:flex;flex-direction:column;gap:5px}
 .sbar-top{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-soft)}
@@ -499,6 +514,13 @@ a{color:inherit}
           <label for="taskSubject">科目</label>
           <select id="taskSubject"></select>
         </div>
+        <div class="field">
+          <label for="taskKind">类型</label>
+          <select id="taskKind">
+            <option value="theory">理论 · 听课</option>
+            <option value="practice" selected>实践 · 做题</option>
+          </select>
+        </div>
         <div class="field date-field">
           <label for="taskDate">日期</label>
           <input type="date" id="taskDate">
@@ -554,6 +576,10 @@ a{color:inherit}
       <h3>各科完成进度</h3>
       <div class="subject-bars" id="subjectBars"></div>
     </div>
+    <div class="stat-card">
+      <h3>理论 · 实践比例</h3>
+      <div id="kindStats"></div>
+    </div>
   </section>
 
 </main>
@@ -583,6 +609,13 @@ a{color:inherit}
         <div class="field">
           <label for="editSubject">科目</label>
           <select id="editSubject"></select>
+        </div>
+        <div class="field">
+          <label for="editKind">类型</label>
+          <select id="editKind">
+            <option value="theory">理论 · 听课</option>
+            <option value="practice">实践 · 做题</option>
+          </select>
         </div>
         <div class="field">
           <label for="editDate">日期</label>
@@ -928,6 +961,7 @@ function buildPresetTasks(){
         tasks.push({
           id: 'p' + w + '-' + k + '-' + j,
           subject: k,
+          kind: inferKind(list[(base + j) % list.length]),
           content: list[(base + j) % list.length],
           date: date,
           duration: dur,
@@ -1190,6 +1224,43 @@ function renderStats(){
     bhtml += '</div>';
   });
   bars.innerHTML = bhtml;
+
+  renderKindStats();
+}
+
+/* ===== 渲染：理论 / 实践比例 ===== */
+function renderKindStats(){
+  const wrap = document.getElementById('kindStats');
+  if(!wrap) return;
+  const all = state.tasks;
+  const pending = all.filter(t => !t.done);
+  const count = function(list, kind){ return list.filter(t => kindOf(t) === kind).length; };
+  const allT = count(all, 'theory'), allP = count(all, 'practice');
+  const penT = count(pending, 'theory'), penP = count(pending, 'practice');
+  const total = allT + allP;
+  const pct = function(n){ return total ? Math.round(n / total * 100) : 0; };
+  const tPct = pct(allT), pPct = pct(allP);
+
+  let tip;
+  const penTotal = penT + penP;
+  const penPct = penTotal ? Math.round(penP / penTotal * 100) : 0;
+  if(penTotal === 0) tip = '当前没有待完成的任务，先添加或加载计划吧。';
+  else if(penPct < 40) tip = '待完成中实践（做题）仅占 ' + penPct + '%，刷题偏少，记得多做题！';
+  else if(penPct < 60) tip = '待完成中实践占 ' + penPct + '%，听课与刷题搭配均衡，保持。';
+  else tip = '待完成中实践占 ' + penPct + '%，刷题充足，注意同步巩固理论。';
+
+  let html = '';
+  html += '<div class="kind-bar">';
+  html += '<span class="kb-theory" style="width:' + (tPct || 0) + '%"></span>';
+  html += '<span class="kb-practice" style="width:' + (pPct || 0) + '%"></span>';
+  html += '</div>';
+  html += '<div class="kind-legend">';
+  html += '<span><i class="kdot td"></i>理论 · 听课 <b>' + allT + '</b> 条 · ' + tPct + '%</span>';
+  html += '<span><i class="kdot pd"></i>实践 · 做题 <b>' + allP + '</b> 条 · ' + pPct + '%</span>';
+  html += '</div>';
+  html += '<div class="kind-pending">待完成：理论 ' + penT + ' 条 · 实践 ' + penP + ' 条</div>';
+  html += '<div class="kind-tip">' + tip + '</div>';
+  wrap.innerHTML = html;
 }
 
 /* ===== 渲染：备考进度（预期 vs 实际） ===== */
@@ -1243,6 +1314,25 @@ function renderAll(){
 }
 
 /* ===== 交互：表单 ===== */
+const KIND_OPTIONS = [
+  { v: 'theory', label: '理论 · 听课' },
+  { v: 'practice', label: '实践 · 做题' }
+];
+function fillKindOptions(sel, selected){
+  sel.innerHTML = KIND_OPTIONS.map(k =>
+    '<option value="' + k.v + '"' + (k.v === selected ? ' selected' : '') + '>' + k.label + '</option>'
+  ).join('');
+}
+/* 任务类型推断：优先按内容关键词归类；无命中时默认实践（做题） */
+function inferKind(content){
+  const c = String(content || '');
+  if(/真题|模拟|限时|专项|练习|训练|做题|套卷|精练|速练|重做|批改|测试|错题|刷题/.test(c)) return 'practice';
+  if(/听课|精讲|课程|背诵|默写|精读|复习|总结|整理|框架|模板|手册|通读|回归|摘录|笔记|归纳/.test(c)) return 'theory';
+  return 'practice';
+}
+function kindOf(t){
+  return (t && t.kind) ? t.kind : inferKind(t && t.content);
+}
 function fillSubjectOptions(sel, selected){
   sel.innerHTML = SUBJECT_KEYS.map(k =>
     '<option value="' + k + '"' + (k === selected ? ' selected' : '') + '>' + SUBJECTS[k].name + '</option>'
@@ -1251,6 +1341,7 @@ function fillSubjectOptions(sel, selected){
 document.getElementById('taskForm').addEventListener('submit', function(e){
   e.preventDefault();
   const subject = document.getElementById('taskSubject').value;
+  const kind = document.getElementById('taskKind').value;
   const date = document.getElementById('taskDate').value || todayStr();
   const content = document.getElementById('taskContent').value.trim();
   const duration = Math.max(5, parseInt(document.getElementById('taskDuration').value, 10) || 90);
@@ -1258,6 +1349,7 @@ document.getElementById('taskForm').addEventListener('submit', function(e){
   state.tasks.push({
     id: 't' + Date.now() + Math.random().toString(36).slice(2,6),
     subject: subject,
+    kind: kind,
     content: content,
     date: date,
     duration: duration,
@@ -1319,6 +1411,7 @@ const editMask = document.getElementById('editMask');
 function openEditModal(task){
   editingId = task.id;
   fillSubjectOptions(document.getElementById('editSubject'), task.subject);
+  fillKindOptions(document.getElementById('editKind'), kindOf(task));
   document.getElementById('editDate').value = task.date;
   document.getElementById('editContent').value = task.content;
   document.getElementById('editDuration').value = task.duration || 90;
@@ -1331,6 +1424,7 @@ document.getElementById('editForm').addEventListener('submit', function(e){
   const content = document.getElementById('editContent').value.trim();
   if(!content) return;
   t.subject = document.getElementById('editSubject').value;
+  t.kind = document.getElementById('editKind').value;
   t.date = document.getElementById('editDate').value || t.date;
   t.content = content;
   t.duration = Math.max(5, parseInt(document.getElementById('editDuration').value, 10) || 90);
@@ -1868,6 +1962,7 @@ async function boot(){
 /* ===== 初始化 ===== */
 fillSubjectOptions(document.getElementById('taskSubject'), 'math3');
 fillSubjectOptions(document.getElementById('editSubject'), 'math3');
+fillKindOptions(document.getElementById('editKind'), 'practice');
 document.getElementById('taskDate').value = todayStr();
 renderAll();
 boot();
