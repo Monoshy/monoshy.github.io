@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-07T05:13:54.863Z",
+  "exportedAt": "2026-09-07T05:42:19.994Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -14,7 +14,8 @@
       "duration": 90,
       "done": true,
       "preset": false,
-      "createdAt": 1788591148153
+      "createdAt": 1788591148153,
+      "kind": "theory"
     },
     {
       "id": "t1788591155573dc2l",
@@ -24,7 +25,8 @@
       "duration": 90,
       "done": true,
       "preset": false,
-      "createdAt": 1788591155573
+      "createdAt": 1788591155573,
+      "kind": "theory"
     },
     {
       "id": "t1788591163084ir2l",
@@ -34,7 +36,8 @@
       "duration": 90,
       "done": true,
       "preset": false,
-      "createdAt": 1788591163084
+      "createdAt": 1788591163084,
+      "kind": "theory"
     },
     {
       "id": "t17885911688751hk4",
@@ -44,7 +47,8 @@
       "duration": 90,
       "done": true,
       "preset": false,
-      "createdAt": 1788591168875
+      "createdAt": 1788591168875,
+      "kind": "theory"
     },
     {
       "id": "t1788591174921r1ow",
@@ -55,7 +59,8 @@
       "done": false,
       "preset": false,
       "createdAt": 1788591174921,
-      "deferred": true
+      "deferred": true,
+      "kind": "theory"
     },
     {
       "id": "t17885911813047v7m",
@@ -66,7 +71,8 @@
       "done": false,
       "preset": false,
       "createdAt": 1788591181304,
-      "deferred": true
+      "deferred": true,
+      "kind": "theory"
     },
     {
       "id": "t1788607204669zvph",
@@ -77,7 +83,8 @@
       "done": false,
       "preset": false,
       "createdAt": 1788607204669,
-      "deferred": true
+      "deferred": true,
+      "kind": "theory"
     },
     {
       "id": "t1788675656039etxz",
@@ -87,7 +94,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675656039
+      "createdAt": 1788675656039,
+      "kind": "theory"
     },
     {
       "id": "t1788675673554vlfh",
@@ -97,7 +105,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675673554
+      "createdAt": 1788675673554,
+      "kind": "theory"
     },
     {
       "id": "t1788675686207he2g",
@@ -107,7 +116,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675686207
+      "createdAt": 1788675686207,
+      "kind": "theory"
     },
     {
       "id": "t17886756922773kye",
@@ -117,7 +127,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675692277
+      "createdAt": 1788675692277,
+      "kind": "theory"
     },
     {
       "id": "t1788675732477ygox",
@@ -127,7 +138,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675732477
+      "createdAt": 1788675732477,
+      "kind": "theory"
     },
     {
       "id": "t1788675741228o55m",
@@ -137,7 +149,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675741228
+      "createdAt": 1788675741228,
+      "kind": "theory"
     },
     {
       "id": "t1788675747779uego",
@@ -147,7 +160,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675747779
+      "createdAt": 1788675747779,
+      "kind": "theory"
     },
     {
       "id": "t178867575420971dk",
@@ -157,7 +171,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675754209
+      "createdAt": 1788675754209,
+      "kind": "theory"
     },
     {
       "id": "t17886757603841nzv",
@@ -167,7 +182,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675760384
+      "createdAt": 1788675760384,
+      "kind": "theory"
     },
     {
       "id": "t1788675766544xoz2",
@@ -177,7 +193,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675766544
+      "createdAt": 1788675766544,
+      "kind": "theory"
     },
     {
       "id": "t1788675771048adpm",
@@ -187,7 +204,8 @@
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788675771048
+      "createdAt": 1788675771048,
+      "kind": "theory"
     },
     {
       "id": "t1788708166902bsby",
@@ -197,7 +215,8 @@
       "duration": 90,
       "done": true,
       "preset": false,
-      "createdAt": 1788708166902
+      "createdAt": 1788708166902,
+      "kind": "theory"
     }
   ]
 }
