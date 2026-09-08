@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-07T16:03:54.278Z",
+  "exportedAt": "2026-09-08T13:32:59.342Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -78,7 +78,7 @@
       "id": "t1788607204669zvph",
       "subject": "micro",
       "content": "微观 完全竞争市场",
-      "date": "2026-09-07",
+      "date": "2026-09-08",
       "duration": 90,
       "done": false,
       "preset": false,
@@ -90,45 +90,49 @@
       "id": "t1788675656039etxz",
       "subject": "math3",
       "content": "线代基础09 特征值性质与相似矩阵",
-      "date": "2026-09-07",
+      "date": "2026-09-08",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1788675656039,
-      "kind": "theory"
+      "kind": "theory",
+      "deferred": true
     },
     {
       "id": "t1788675673554vlfh",
       "subject": "math3",
       "content": "线代基础10 相似对角化与对称矩阵",
-      "date": "2026-09-07",
+      "date": "2026-09-08",
       "duration": 90,
       "done": false,
       "preset": false,
       "createdAt": 1788675673554,
-      "kind": "theory"
+      "kind": "theory",
+      "deferred": true
     },
     {
       "id": "t1788675686207he2g",
       "subject": "math3",
       "content": "线代基础11 合同对角化与二次型",
-      "date": "2026-09-07",
+      "date": "2026-09-08",
       "duration": 90,
       "done": false,
       "preset": false,
       "createdAt": 1788675686207,
-      "kind": "theory"
+      "kind": "theory",
+      "deferred": true
     },
     {
       "id": "t17886756922773kye",
       "subject": "math3",
       "content": "线代基础12 二次型的配方法与正定性",
-      "date": "2026-09-07",
+      "date": "2026-09-08",
       "duration": 90,
       "done": false,
       "preset": false,
       "createdAt": 1788675692277,
-      "kind": "theory"
+      "kind": "theory",
+      "deferred": true
     },
     {
       "id": "t1788675732477ygox",
@@ -223,11 +227,12 @@
       "subject": "politics",
       "kind": "both",
       "content": "12 历史观基本问题、社会基本矛盾",
-      "date": "2026-09-07",
+      "date": "2026-09-08",
       "duration": 90,
       "done": false,
       "preset": false,
-      "createdAt": 1788796343629
+      "createdAt": 1788796343629,
+      "deferred": true
     }
   ]
 }
