@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-10T11:56:05.321Z",
+  "exportedAt": "2026-09-11T14:15:25.199Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -140,7 +140,7 @@
       "content": "概率基础01 事件关系与概率公式",
       "date": "2026-09-10",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1788675732477,
       "kind": "theory",
