@@ -197,7 +197,30 @@ a{color:inherit}
 .add-subject-btn:hover{filter:brightness(.92)}
 .subject-card.empty .ring-fg{stroke-dasharray:0}
 
-/* ===== 任务计划 ===== */
+/* 批量操作 */
+.batch-sel{flex:none;display:flex;align-items:center;cursor:pointer;margin-right:2px}
+.batch-sel input{width:16px;height:16px;accent-color:#2F6B5E;cursor:pointer}
+.batch-bar{
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:10px 16px;margin-bottom:16px;
+}
+.bb-count{font-size:13px;color:var(--ink-soft);margin-right:2px}
+.bb-count b{color:var(--ink);font-variant-numeric:tabular-nums}
+.bb-field{display:flex;align-items:center;gap:6px}
+.bb-field label{font-size:12px;color:var(--muted)}
+.bb-field select,.bb-field input{border:1px solid var(--line);border-radius:8px;padding:6px 8px;background:#fff;font-size:13px;color:var(--ink)}
+.bb-btn{border:1px solid var(--line);border-radius:8px;padding:6px 12px;font-size:12.5px;background:#fff;color:var(--ink);cursor:pointer;transition:opacity .15s}
+.bb-btn.primary{background:#2F6B5E;color:#fff;border-color:#2F6B5E}
+.bb-btn.danger{background:#C2482E;color:#fff;border-color:#C2482E}
+.bb-btn.ghost{background:transparent;color:var(--muted)}
+.bb-btn:hover{opacity:.85}
+@media (max-width:760px){
+  .batch-bar{gap:8px}
+  .bb-field{flex:1 1 calc(50% - 8px)}
+}
+
+/* 任务计划 ===== */
 .tasks-section{margin-bottom:52px}
 .task-panel{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:20px}
 .task-form{display:grid;grid-template-columns:1fr 1fr 1.6fr 120px;gap:12px;align-items:end}
@@ -569,6 +592,18 @@ a{color:inherit}
         <button class="filter-chip" data-filter="range" data-value="week">近 7 天</button>
       </span>
       <span class="f-count" id="filterCount"></span>
+    </div>
+
+    <div class="batch-bar" id="batchBar" style="display:none">
+      <span class="bb-count">已选 <b id="batchCount">0</b> 项</span>
+      <span class="bb-field"><label>科目</label><select id="batchSubject"></select></span>
+      <span class="bb-field"><label>类型</label><select id="batchKind"></select></span>
+      <span class="bb-field"><label>改期至</label><input type="date" id="batchDate"></span>
+      <button class="bb-btn primary" id="batchApply">应用修改</button>
+      <button class="bb-btn" id="batchDone">标为完成</button>
+      <button class="bb-btn" id="batchUndone">标为未完成</button>
+      <button class="bb-btn danger" id="batchDelete">删除所选</button>
+      <button class="bb-btn ghost" id="batchClear">取消选择</button>
     </div>
 
     <div class="task-groups" id="taskGroups"></div>
@@ -1128,6 +1163,61 @@ function syncFilterUI(){
 }
 
 /* ===== 渲染：任务列表 ===== */
+/* ===== 批量操作 ===== */
+const selectedIds = new Set();
+function updateBatchBar(){
+  const bar = document.getElementById('batchBar');
+  const n = selectedIds.size;
+  document.getElementById('batchCount').textContent = n;
+  bar.style.display = n ? 'flex' : 'none';
+}
+function batchApplyFields(){
+  const subject = document.getElementById('batchSubject').value;
+  const kind = document.getElementById('batchKind').value;
+  const date = document.getElementById('batchDate').value;
+  if(!subject && !kind && !date){
+    alert('请先选择要修改的科目 / 类型 / 日期（任选其一即可）');
+    return;
+  }
+  let c = 0;
+  selectedIds.forEach(id => {
+    const t = state.tasks.find(x => x.id === id);
+    if(!t) return;
+    if(subject) t.subject = subject;
+    if(kind) t.kind = kind;
+    if(date) t.date = date;
+    c++;
+  });
+  saveState();
+  renderAll();
+  selectedIds.clear();
+  updateBatchBar();
+  alert('已批量修改 ' + c + ' 条任务');
+}
+function batchSetDone(v){
+  let c = 0;
+  selectedIds.forEach(id => {
+    const t = state.tasks.find(x => x.id === id);
+    if(!t) return;
+    t.done = v;
+    c++;
+  });
+  saveState();
+  renderAll();
+  selectedIds.clear();
+  updateBatchBar();
+  alert('已' + (v ? '标为完成' : '标为未完成') + ' ' + c + ' 条任务');
+}
+function batchDeleteSelected(){
+  const n = selectedIds.size;
+  if(!confirm('确定删除所选 ' + n + ' 条任务吗？此操作不可撤销，建议先「导出数据」备份。')) return;
+  state.tasks = state.tasks.filter(t => !selectedIds.has(t.id));
+  saveState();
+  renderAll();
+  selectedIds.clear();
+  updateBatchBar();
+}
+
 function renderTasks(){
   const groupsWrap = document.getElementById('taskGroups');
   const today = todayStr();
@@ -1177,6 +1267,7 @@ function renderTasks(){
     list.forEach(t => {
       const s = SUBJECTS[t.subject] || { name:'未知', color:'#999' };
       html += '<div class="task-item' + (t.done ? ' done' : '') + '" style="--sc:' + s.color + '">';
+      html += '<label class="batch-sel" title="勾选以批量操作"><input type="checkbox" class="task-sel" data-sel="' + t.id + '"' + (selectedIds.has(t.id) ? ' checked' : '') + '></label>';
       html += '<button class="task-check" data-toggle="' + t.id + '" aria-label="切换完成状态">';
       html += '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6.2 4.8 9 10 3" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
       html += '</button>';
@@ -2011,6 +2102,32 @@ async function boot(){
 fillSubjectOptions(document.getElementById('taskSubject'), 'math3');
 fillSubjectOptions(document.getElementById('editSubject'), 'math3');
 fillKindOptions(document.getElementById('editKind'), 'practice');
+/* 批量栏选项 */
+(function(){
+  const bs = document.getElementById('batchSubject');
+  bs.innerHTML = '<option value="">科目（不改）</option>' + SUBJECT_KEYS.map(k => '<option value="' + k + '">' + SUBJECTS[k].name + '</option>').join('');
+  const bk = document.getElementById('batchKind');
+  bk.innerHTML = '<option value="">类型（不改）</option>' + KIND_OPTIONS.map(k => '<option value="' + k.v + '">' + k.label + '</option>').join('');
+})();
+/* 批量选择：勾选状态（事件委托） */
+document.getElementById('taskGroups').addEventListener('change', function(e){
+  const cb = e.target.closest('.task-sel');
+  if(!cb) return;
+  const id = cb.getAttribute('data-sel');
+  if(cb.checked) selectedIds.add(id);
+  else selectedIds.delete(id);
+  updateBatchBar();
+});
+/* 批量操作按钮 */
+document.getElementById('batchApply').addEventListener('click', batchApplyFields);
+document.getElementById('batchDone').addEventListener('click', function(){ batchSetDone(true); });
+document.getElementById('batchUndone').addEventListener('click', function(){ batchSetDone(false); });
+document.getElementById('batchDelete').addEventListener('click', batchDeleteSelected);
+document.getElementById('batchClear').addEventListener('click', function(){
+  selectedIds.clear();
+  renderAll();
+  updateBatchBar();
+});
 document.getElementById('taskDate').value = todayStr();
 renderAll();
 boot();
