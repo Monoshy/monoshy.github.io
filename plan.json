@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-16T04:21:56.269Z",
+  "exportedAt": "2026-09-18T07:20:59.139Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -1380,7 +1380,7 @@
       "content": "第九章:一股均衡与福利经济学",
       "date": "2026-09-16",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376850380
     },
@@ -1391,7 +1391,7 @@
       "content": "第十一章:市场失灵和微观经济政策",
       "date": "2026-09-16",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376857172
     },
