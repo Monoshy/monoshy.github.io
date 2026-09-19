@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-18T13:14:25.496Z",
+  "exportedAt": "2026-09-19T17:28:30.269Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -236,7 +236,7 @@
       "content": "高数强化一",
       "date": "2026-09-16",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295172791
     },
@@ -731,7 +731,7 @@
       "content": "马原03",
       "date": "2026-09-16",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295391070
     },
@@ -1402,7 +1402,7 @@
       "content": "第一讲:宏观经济学导论",
       "date": "2026-09-16",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376895895
     },
