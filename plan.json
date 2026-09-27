@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-22T16:52:11.102Z",
+  "exportedAt": "2026-09-27T16:18:03.966Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -1413,7 +1413,7 @@
       "content": "第二讲:收入-支出模型",
       "date": "2026-09-17",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376898864
     },
@@ -1424,7 +1424,7 @@
       "content": "第三讲:IS-LM模型",
       "date": "2026-09-17",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376901451
     },
@@ -1435,7 +1435,7 @@
       "content": "第四讲:AD-AS模型",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376911241
     },
@@ -1446,7 +1446,7 @@
       "content": "第五讲:失业与通胀",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376915131
     },
@@ -1457,7 +1457,7 @@
       "content": "第六讲:宏观经济政策",
       "date": "2026-09-19",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376918476
     },
@@ -1468,7 +1468,7 @@
       "content": "第七讲:蒙代尔弗莱明模型",
       "date": "2026-09-19",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376921360
     },
@@ -1479,7 +1479,7 @@
       "content": "第八讲:经济增长",
       "date": "2026-09-20",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376924398
     },
