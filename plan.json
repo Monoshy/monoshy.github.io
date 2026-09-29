@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-09-27T16:18:03.966Z",
+  "exportedAt": "2026-09-29T03:30:37.188Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -742,7 +742,7 @@
       "content": "马原4",
       "date": "2026-09-17",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295392607
     },
@@ -753,7 +753,7 @@
       "content": "马原5",
       "date": "2026-09-17",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295393950
     },
@@ -1490,7 +1490,7 @@
       "content": "第九讲:宏观经济学的微观基础",
       "date": "2026-09-20",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376931018
     },
@@ -1501,7 +1501,7 @@
       "content": "第十讲:新古典宏观与新凯恩斯主义",
       "date": "2026-09-21",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789376934351
     },
