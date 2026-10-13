@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-10-09T14:07:16.635Z",
+  "exportedAt": "2026-10-13T07:57:37.860Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -280,7 +280,7 @@
       "content": "高数强化五",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295185999
     },
@@ -291,7 +291,7 @@
       "content": "高数强化6",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295192278
     },
@@ -302,7 +302,7 @@
       "content": "高数强化7",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295194399
     },
@@ -313,7 +313,7 @@
       "content": "高数强化8",
       "date": "2026-09-19",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295196183
     },
@@ -324,7 +324,7 @@
       "content": "高数强化9",
       "date": "2026-09-19",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295199511
     },
@@ -335,7 +335,7 @@
       "content": "高数强化10",
       "date": "2026-09-19",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295203023
     },
@@ -346,7 +346,7 @@
       "content": "高数强化11",
       "date": "2026-09-20",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295205015
     },
@@ -357,7 +357,7 @@
       "content": "高数强化12",
       "date": "2026-09-20",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295208272
     },
@@ -368,7 +368,7 @@
       "content": "高数强化13",
       "date": "2026-09-20",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295213121
     },
@@ -764,7 +764,7 @@
       "content": "马原6",
       "date": "2026-09-17",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295395153
     },
@@ -775,7 +775,7 @@
       "content": "马原7",
       "date": "2026-09-17",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295396494
     },
@@ -786,7 +786,7 @@
       "content": "马原8",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295397732
     },
@@ -797,7 +797,7 @@
       "content": "马原9",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295398864
     },
@@ -808,7 +808,7 @@
       "content": "马原10",
       "date": "2026-09-18",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295400455
     },
