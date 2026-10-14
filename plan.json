@@ -1,7 +1,7 @@
 {
   "app": "kaoyan-planner",
   "version": 2,
-  "exportedAt": "2026-10-13T08:13:26.641Z",
+  "exportedAt": "2026-10-14T19:29:48.081Z",
   "examDate": "2026-12-19",
   "presetStart": null,
   "presetLoaded": false,
@@ -379,7 +379,7 @@
       "content": "高数强化14",
       "date": "2026-10-13",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295216865
     },
@@ -390,7 +390,7 @@
       "content": "高数强化15",
       "date": "2026-10-14",
       "duration": 90,
-      "done": false,
+      "done": true,
       "preset": false,
       "createdAt": 1789295218907
     },
